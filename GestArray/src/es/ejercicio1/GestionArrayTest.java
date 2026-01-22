@@ -9,7 +9,7 @@ public class GestionArrayTest {
     // Explico: comentario que describe lo que viene a continuación.
     // Explico: creo un array de 10 enteros de forma fija. En Python sería: datos = [0]*10
     // Explico: "public static" hace que la variable exista para todos los métodos sin crear objetos.
-    public static int [] datos = new int [10]; // lo pongo de manera pública
+    public static int [] datos; // lo pongo de manera pública
     // Explico: variable que indica si ya se rellenaron los valores del array. En Python: rellenado = False
     public static boolean rellenado = false; //Pongo por defecto una variable para determinar si está rellenado el campo.
     // Explico: creo un lector de teclado una sola vez para usar en todo el programa. En Python no hace falta.
@@ -18,8 +18,17 @@ public class GestionArrayTest {
     
     // Explico: comentario indicando que el menú estará en el main.
     // Explico: método main es el punto de entrada; en Python sería: if __name__ == "__main__":
-    public static void main (String[]args) {
-        
+    public static void main(String[] args) {
+        int tam = 10; // tamaño por defecto
+        if (args.length > 0) {
+            try {
+                tam = Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                System.out.println("Argumento no válido, usando tamaño por defecto: 10");
+            }
+        }
+        datos = new int[tam]; // inicializo el array con el tamaño determinado
+    
         // Explico: bucle infinito que muestra el menú hasta que el usuario elija salir.
         while (true) {
             // Explico: muestro texto en pantalla. En Python usaría print().
@@ -115,7 +124,7 @@ public class GestionArrayTest {
     
     //método para introducir los 10 números. En Python sería def introducir():
     public static void introducir () {
-        System.out.println("Introduce 1o números enteros: ");
+        System.out.println("Introduce " + datos.length + " números enteros: ");
         // Bucle for que recorre las posiciones del array desde 0 hasta 9.
         // Empieza en 0; i < datos.length significa "mientras i sea menor que 10";
         // (i + 1): i almacena índice que comienza en 0 pero para mostrar al usuario se suma 1 para que empiece en 1. //Lo muestro para que el usuario pueda verlo en formato

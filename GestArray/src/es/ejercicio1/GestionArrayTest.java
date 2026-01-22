@@ -187,7 +187,7 @@ public class GestionArrayTest {
         // devuelvo el menor encontrado.
         return menor;
     }
-    // Explico: método que suma todos los elementos y devuelve la suma como long.
+    //método que suma todos los elementos y devuelve la suma como long.
     public static long obtenerSuma() {
         long suma = 0; 
         //recorro cada posición y voy acumulando en la variable suma.

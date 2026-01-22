@@ -44,7 +44,7 @@ public class GestionArrayTest {
                 opcion = Integer.parseInt(linea); //Convierto el texto a int y lo guardo como opción
                 
             } catch (NumberFormatException e ) {
-                // Explico: si la conversión falla, aviso y vuelvo al principio del menú.
+                //si la conversión falla, aviso y vuelvo al principio del menú.
                 System.err.println("Haz el favor de introducir un número, por favor: ");
                 continue ;
                 
@@ -146,7 +146,7 @@ public class GestionArrayTest {
     }
     //  método para mostrar el contenido del array.
     public static void mostrar() {
-        // Explico: si no está rellenado, aviso y no muestro nada.
+        //si no está rellenado, aviso y no muestro nada.
         if(!rellenado) {
             System.err.println("Por favor, introduce datos para poder verlos: ");
             return;
@@ -165,22 +165,22 @@ public class GestionArrayTest {
         // recorro desde la segunda posición (i = 1) comparando para encontrar el mayor.
         for (int i = 1; i < datos.length; i++) {
             if (datos[i] > mayor) {
-                // Explico: si el valor actual es mayor que "mayor", actualizo "mayor".
+                //si el valor actual es mayor que "mayor", actualizo "mayor".
                 mayor = datos [i];
             }
         }
-        // Explico: devuelvo el mayor encontrado.
+        // devuelvo el mayor encontrado.
         return mayor;
     }
     
     // método que devuelve el menor valor del array.
     public static int obtenerMenor () {
-        // Explico: inicio el menor con el primer elemento del array.
+        //inicio el menor con el primer elemento del array.
         int menor = datos [0];
-        // Explico: recorro todas las posiciones y comparo para encontrar el menor.
+        //recorro todas las posiciones y comparo para encontrar el menor.
         for (int i = 0; i < datos.length; i++) {
             if (datos[i] < menor) {
-                // Explico: si el valor actual es menor que "menor", actualizo "menor".
+                //si el valor actual es menor que "menor", actualizo "menor".
                 menor = datos [i];
             }
         }
@@ -190,10 +190,10 @@ public class GestionArrayTest {
     // Explico: método que suma todos los elementos y devuelve la suma como long.
     public static long obtenerSuma() {
         long suma = 0; 
-        // Explico: recorro cada posición y voy acumulando en la variable suma.
+        //recorro cada posición y voy acumulando en la variable suma.
         for (int i = 0; i < datos.length; i++ ) {
             suma += datos [i];
-            // Explico: suma += datos[i] significa suma = suma + datos[i]
+            //suma += datos[i] significa suma = suma + datos[i]
         }
         //  devuelvo la suma total.
         return suma;
@@ -202,8 +202,8 @@ public class GestionArrayTest {
     // método que calcula la media aritmética: suma dividida entre número de elementos.
     public static double obtenerMedia() {
         long suma = obtenerSuma();
-        // Explico: cast (double) convierte la suma a número con decimales antes de la división.
-        // Explico: dividir por datos.length (10) da la media; si suma = 15 -> 15/10 = 1.5
+        // cast (double) convierte la suma a número con decimales antes de la división.
+        // dividir por datos.length (10) da la media; si suma = 15 -> 15/10 = 1.5
         return (double) suma / datos.length;
     }
      
